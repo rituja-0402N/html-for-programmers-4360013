@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamically Generate HTML Elements With JavaScript</title>
 </head>
-
+<link rel = "stylesheet" type="text/css" href ="style.css">
 <body>
   <!-- Generate this for each node
   <div>
@@ -16,9 +16,20 @@
     <p><a href=""></a></p>
     <button></button>
   </div> -->
-  <div class="wrapper"></div>
+  <div class="wrapper">
+    <!--Container for flexbox use-->
+    <section class="container">
+      <div>
+        <h1>Welcome to Friends Page!!</h1>
+      </div>
+    </section>
+  </div>
+  <div class="button">
+  
+  </div>
 
   <script>
+    //Json data
     const socials = [
       {
         name: 'Mai Sarabia',
@@ -46,7 +57,59 @@
       }
     ];
 
+    //query selector for one node
+    const wrapper = document.querySelector('.wrapper');
+
+    socials.forEach(user => {
+      let socialWrapper  = document.createElement('div');
+      //socialWrapper.style = 'border:2px solid red';
+      
+
+      let avatar = document.createElement('img');
+      avatar.src = user.avatar;
+      avatar.name = user.name;
+      //add items to DOM
+      socialWrapper.appendChild(avatar);
+      wrapper.appendChild(socialWrapper);
+
+      let name = document.createElement('h3');
+      name.innerHTML = user.name;
+      socialWrapper.appendChild(name);
+
+      let location = document.createElement('p');
+      location.innerHTML = user.city +", " + user.country;
+      socialWrapper.appendChild(location);
+
+      let AddFriendButton = document.createElement('button');
+      AddFriendButton.innerHTML = 'Add Friend';
+      socialWrapper.appendChild(AddFriendButton);
+      var button = document.querySelector('button');
+      button.addEventListener('click',myFunction);
+      
+      function myFunction(){
+        //alert("new friend added!");
+      }
+        
+
+
+      //DISPLAY CITY AND COUNTRY USING PREPEND AND INNER NODE
+      // let loc = document.createElement('p');
+      // loc.innerText = user.country;
+      // let city = document.createElement('a');
+      // city.src = '#';
+      // city.appendChild(document.createElement(`{user.city}, `));
+      // loc.prepend(city);
+      // socialWrapper.appendChild(loc);
+      
+
+      //add child to DOM
+      
+      
+      
+    });
+
   </script>
+  
 </body>
 
 </html>

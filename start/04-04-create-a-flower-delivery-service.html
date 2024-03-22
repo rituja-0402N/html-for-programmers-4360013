@@ -1,15 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Right Side Section</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create A Flower Delivery Service</title>
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+
+  .sidebar {
+    flex-basis: 200px;
+    padding: 10px;
+    /*background-color: #e0e0e0;*/
+  }
+</style>
 </head>
-
 <body>
+  <form action ="">
+   <!--Contact section-->
+    <div >
+      <h3 style="color: blueviolet;">Welcome to our Fabulous flowers </h3>
+      </div>
+    <!--Recipient Details-->
+      <div>
+        <h4>Recipent Details</h4>
+        <label for ="Full_name_recipent"><b>Full Name</b></label>
+        <br>
+        <input type ="text" id="Full_name_recipent" placeholder="">
+        <br>
+        <br>
+        <label for="Telephone_Number"><b>Telephone Number</b></label>
+        <br>
+        <input type="tel" id="Telephone_Number" placeholder="">
+        <br>
+        <br>
+        <label for="Address"><b>Address</b></label>
+        <br>
+        <input type="text" id="Address" placeholder="">
+      </div>
+    <!--Sender Details-->
+      <div class="sidebar">
+        <p style="text-align: right;">Sender Details</p>
+        <label for="Full_name_sender" class="sidebar"><b>Full Name</b></label>
+        <br>
+        <input type="text" id="Full_name_sender"  class="sidebar" placeholder="">
+        <br>
+        <label for="Full_name_email"><b>Email</b></label>
+        <br>
+        <input type="email" id="Full_name_email" placeholder="">
+        <br>
+        <br>
+        <br>
+      </div>
+  <!--Order Section-->
+  <div>
+    <h4>Order</h4>
+    <label for = "Boquet_type"><b>Boquet Type</b></label>
+    <br>
+    <br>
+    <select name = "Type of Boquet" id = "Boquet_type" 
+    placeholder = "Basic Boquet -$24.99">
+      <option value="basic">Basic Boquet - $24.99</option>
+      <option value="premium">Premium Boquet - $49.99</option>
+      <option value="premium-plus">Premium Boquet + Chocolate - 69.99</option>
+    </select><br>
+
+    <label for ="message-textarea">Message</label><br>
+    <textarea name ="message" id =" message-textarea" cols="30" rows="10"></textarea><br>
+
+    <button type="submit">Submit</button>
+  </div>
   
+  </form>
 </body>
 
 </html>
